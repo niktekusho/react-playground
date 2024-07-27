@@ -30,14 +30,16 @@ export function Breadcrumb() {
 function BreadcrumbItem({ item, isLast }: { item: string; isLast: boolean }) {
   const isRoot = item.length === 0;
   return (
-    <li
-      className={`text-lg relative rounded-full hover:bg-gray-700 focus-within:underline focus-within:underline-offset-8 px-4 py-2 ${
-        isLast
-          ? "font-bold"
-          : "after:content-['/'] after:ms-5 after:absolute after:text-gray-500"
-      }`}
-    >
-      <Link href={isRoot ? "/" : item} className="focus:outline-none">
+    <li>
+      <Link
+        href={isRoot ? "/" : item}
+        prefetch
+        className={`focus:outline-none text-lg relative rounded-full hover:bg-gray-700 focus-within:underline focus-within:underline-offset-8 px-4 py-2 ${
+          isLast
+            ? "font-bold"
+            : "after:content-['/'] after:ms-5 after:absolute after:text-gray-500"
+        }`}
+      >
         {isRoot ? "Home" : capitalize(item)}
       </Link>
     </li>
