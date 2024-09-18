@@ -12,6 +12,11 @@ export default function Home() {
             Tree component example
           </Link>
         </li>
+        <li>
+          <Link href={"/timeline"} className="underline">
+            Timeline component example
+          </Link>
+        </li>
       </ul>
     </main>
   );
